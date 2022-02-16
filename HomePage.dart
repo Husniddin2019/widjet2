@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 class Homepage extends StatefulWidget {
   //static final String id = "homepage";
@@ -14,8 +15,54 @@ class _HomepageState extends State<Homepage> {
       appBar: AppBar(
         title: const Text("PDP"),
       ),
-      body: const Center(
-        child:  Text("PDP online"),
+      body:  Center(
+        child:  Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+         
+          children: [
+            Container(
+              height: 60,
+              color: Colors.blueAccent,
+              child:Center(
+                child: const Text("Messages",textAlign: TextAlign.center,style: TextStyle(fontSize: 24,color: Colors.white),),
+              )
+            ),
+            Container(
+                child:ListTile(
+                  leading: Image.network("https://cdn5.vectorstock.com/i/1000x1000/78/59/happy-grin-emoji-instant-messaging-icon-imag-vector-17067859.jpg"),
+                  title: Text('laurent     20:18'),
+                  subtitle: Text('qandaysiz'),
+                  trailing: Icon(Icons.arrow_forward_ios_sharp),
+
+            ),
+
+            ),
+            Container(
+              child:ListTile(
+                leading: Image.network("https://cdn5.vectorstock.com/i/1000x1000/78/59/happy-grin-emoji-instant-messaging-icon-imag-vector-17067859.jpg"),
+                title: Text('laurent     20:18'),
+                subtitle: Text('qandaysiz'),
+                trailing: Icon(Icons.arrow_forward_ios_sharp),
+              ),
+
+
+            ),
+          Container(
+            child:ListTile(
+              leading: Image.network("https://cdn5.vectorstock.com/i/1000x1000/78/59/happy-grin-emoji-instant-messaging-icon-imag-vector-17067859.jpg"),
+              title: Text('laurent     20:18'),
+              subtitle: Text('qandaysiz'),
+              trailing: Icon(Icons.arrow_forward_ios_sharp),
+            ),),
+          Container(
+            child:ListTile(
+              leading: Image.network("https://cdn5.vectorstock.com/i/1000x1000/78/59/happy-grin-emoji-instant-messaging-icon-imag-vector-17067859.jpg"),
+              title: Text('laurent     20:18'),
+              subtitle: Text('qandaysiz'),
+              trailing: Icon(Icons.arrow_forward_ios_sharp),
+            ),),
+          ],
+        )
       ),
       drawer: Drawer(
         backgroundColor: Colors.white,
@@ -78,3 +125,4 @@ class _HomepageState extends State<Homepage> {
     );
   }
 }
+
