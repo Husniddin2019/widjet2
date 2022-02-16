@@ -1,57 +1,79 @@
 import 'package:flutter/material.dart';
-class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
-static final String id = "HomePage";
+class Homepage extends StatefulWidget {
+  //static final String id = "homepage";
   @override
-  _HomePageState createState() => _HomePageState();
+  _HomepageState createState() => _HomepageState();
+
+  const Homepage({Key? key}) : super(key: key);
 }
 
-class _HomePageState extends State<HomePage> {
+class _HomepageState extends State<Homepage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children:[
-          Expanded(
+      appBar: AppBar(
+        title: const Text("PDP"),
+      ),
+      body: const Center(
+        child:  Text("PDP online"),
+      ),
+      drawer: Drawer(
+        backgroundColor: Colors.white,
+        child: Column(
 
-              child:
-              Container(
-                color: Colors.blue,
-                //child: Text("salom"),
-              ),
-          ),
-          Expanded(
-            flex: 3,
-            child:
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+
             Container(
+              height: 100,
+              width: 100,
+              color: Colors.blueAccent,
+              padding: const EdgeInsets.all(5),
 
-              color: Colors.green,
-              child: Row(
-                children: [
-                  Expanded(
-                    flex: 3,
+              child:  Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: const [
+                  CircleAvatar(
+                    backgroundColor: Colors.white,
+                    radius: 20, // Image radius
+                    child: Text("B",style: TextStyle(fontSize: 32),),
 
-                    child:
-                    Container(
-                      color: Colors.red,
-                      //child: Text("salom"),
-                    ),
                   ),
-                  Expanded(
+                  Text("Baxtiyor Jumayev",style: TextStyle(color: Colors.white),),
+                  Text("b.jumayev@pdp.online",style: TextStyle(color: Colors.white),),
 
-                    child:
-                    Container(
-                      color: Colors.black,
-                      //child: Text("salom"),
-                    ),
-                  ),
                 ],
-              ),
-              //child: Text("salom"),
-            ),
-          ),
+              )
 
-        ],
+
+
+            ),
+            const ListTile(
+              leading: Icon(Icons.home),
+              title: Text('Home'),
+              selected: true,
+
+      ),
+            const ListTile(
+              leading: Icon(Icons.person_rounded),
+              title: Text('Profile'),
+
+
+            ),
+            const ListTile(
+              leading: Icon(Icons.people_rounded),
+              title: Text('Abouts'),
+
+
+            ),
+
+
+
+
+          ],
+        ),
+
       ),
     );
   }
